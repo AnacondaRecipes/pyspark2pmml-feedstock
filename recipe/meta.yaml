@@ -1,0 +1,44 @@
+{% set name = "pyspark2pmml" %}
+{% set version = "0.5.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 426b2d4752d8c201cde533723972c8749aa2a40371f725d85d1524a2bb73ed03
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - py4j
+    - python
+    - pyspark
+  run:
+    - py4j
+    - python
+    - pyspark
+
+test:
+  imports:
+    - pyspark2pmml
+
+about:
+  home: "https://github.com/jpmml/pyspark2pmml"
+  license: "GNU Affero General Public (AGPL) version 3.0"
+  license_family: AGPL
+  license_file: 
+  summary: "Python library for converting Apache Spark ML pipelines to PMML"
+  doc_url: 
+  dev_url: 
+
+extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/34209
+  recipe-maintainers:
+    - ianaobi
