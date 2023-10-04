@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: "{{ PYTHON }} -m pip install --no-deps and --no-build-isolation . -vv"
 
 requirements:
   host:
@@ -20,6 +20,7 @@ requirements:
     - py4j
     - python
     - pyspark
+    - wheel
   run:
     - py4j
     - python
@@ -28,7 +29,8 @@ requirements:
 test:
   imports:
     - pyspark2pmml
-
+  commands:
+    - pip
 about:
   home: "https://github.com/jpmml/pyspark2pmml"
   license: "GNU Affero General Public (AGPL) version 3.0"
