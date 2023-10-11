@@ -18,12 +18,12 @@ requirements:
   host:
     - pip
     - py4j
-    - python >=3.6
+    - python 
     - pyspark
     - wheel
   run:
     - py4j
-    - python >=3.6
+    - python 
     - pyspark
 
 test:
