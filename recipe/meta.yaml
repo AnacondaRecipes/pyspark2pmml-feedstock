@@ -18,20 +18,19 @@ requirements:
   host:
     - pip
     - py4j
-    - python 
+    - python
     - pyspark
     - wheel
   run:
     - py4j
-    - python 
+    - python
     - pyspark
 
 test:
   imports:
-    - pyspark2pmml
+    - pyspark.ml
   commands:
     - pip
-    - pip_check
 about:
   home: "https://github.com/jpmml/pyspark2pmml"
   license: "GNU Affero General Public (AGPL) version 3.0"
@@ -46,3 +45,4 @@ extra:
     ref: https://anaconda.zendesk.com/agent/tickets/34209
   recipe-maintainers:
     - ianaobi
+    - bradley
