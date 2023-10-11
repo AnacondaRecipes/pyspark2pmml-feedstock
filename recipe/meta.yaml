@@ -28,7 +28,7 @@ requirements:
 
 test:
   imports:
-    - pyspark2pmml
+    - pyspark.ml
   commands:
     - pip
     - pip check
