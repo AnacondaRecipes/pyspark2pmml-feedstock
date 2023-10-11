@@ -18,17 +18,17 @@ requirements:
   host:
     - pip
     - py4j
-    - python =3.6
+    - python >=3.6
     - pyspark
     - wheel
   run:
     - py4j
-    - python =3.6
+    - python >=3.6
     - pyspark
 
 test:
   imports:
-    - pyspark.ml
+    - pyspark2pmml
   commands:
     - pip
     - pip_check
