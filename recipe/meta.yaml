@@ -18,12 +18,12 @@ requirements:
   host:
     - pip
     - py4j
-    - python
+    - python =3.6
     - pyspark
     - wheel
   run:
     - py4j
-    - python
+    - python =3.6
     - pyspark
 
 test:
@@ -31,6 +31,7 @@ test:
     - pyspark.ml
   commands:
     - pip
+    - pip_check
 about:
   home: "https://github.com/jpmml/pyspark2pmml"
   license: "GNU Affero General Public (AGPL) version 3.0"
