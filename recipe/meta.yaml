@@ -11,8 +11,9 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install --no-deps --no-build-isolation . -vv"
+  skip: True # [not linux64]
 
 requirements:
   host:
@@ -27,21 +28,25 @@ requirements:
     - pyspark
 
 test:
+  requires:
+    - pip
   imports:
     - pyspark.ml
   commands:
-    - pip
-    - pip_check
+    - pip check
 about:
   home: "https://github.com/jpmml/pyspark2pmml"
-  license: "GNU Affero General Public (AGPL) version 3.0"
+  license: "AGPL-3.0"
   license_family: AGPL
-  license_file: 
+  license_file: LICENSE.txt
   summary: "Python library for converting Apache Spark ML pipelines to PMML"
-  doc_url: 
-  dev_url: 
+  description: "Python package for converting Apache Spark ML pipelines to PMML."
+  doc_url: https://github.com/jpmml/pyspark2pmml
+  dev_url: https://github.com/jpmml/pyspark2pmml
 
 extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
   anaconda-services:
     ref: https://anaconda.zendesk.com/agent/tickets/34209
   recipe-maintainers:
